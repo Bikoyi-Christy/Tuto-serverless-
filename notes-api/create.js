@@ -13,9 +13,9 @@ export const main = handler(async (event, context) => {
       content: data.content, // Parsed from request body
       attachment: data.attachment, // Parsed from request body
       createdAt: Date.now(), // Current Unix timestamp
-    },
+      },
   };
-
+console.log(params);
   await dynamoDb.put(params);
 
   return params.Item;
